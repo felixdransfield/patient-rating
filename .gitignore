@@ -1,0 +1,4 @@
+sym_track
+*.DS_Store
+*.pyc
+__pycache__
