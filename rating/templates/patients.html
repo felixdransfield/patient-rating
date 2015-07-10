@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+<ul>
+    <a href="/"><li>Home</li></a>
+    <a href="/patient/all"><li>Patients</li></a>
+    <a href="/patient/create"><li>Create Patient</li></a>
+</ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% for patient in patients %}
+<div>
+    <h2><a href="/patient/get/{{ patient.id }}/">{{ patient.name }}</a> </h2>
+
+    </div>
+
+{% endfor %}
+
+{% endblock %}

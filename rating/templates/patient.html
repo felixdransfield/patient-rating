@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ patient.name }}</h1>
+<p>Hospital ID:  {{ patient.hospital_id }}</p>
+<p>Date of Birth:  {{ patient.DOB }}</p>
+<p>Date of Admission:  {{ patient.DOA }}</p>
+<p>Date of Discharge:  {{ patient.DOD }}</p>
+
+
+
+
+
+
+
+
+<a href="/patient/panss/new/{{ patient.id }}">Add Panss score</a>
+<!--<a href="/patient/update/{{ patient.id }}">Update</a>-->
+<a href="/patient/panss/{{ patient.id }}">view panss</a>
+<a href="/chart/{{ patient.id }}">view chart</a>
+
+{% endblock %}

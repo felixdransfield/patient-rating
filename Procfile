@@ -1,0 +1,1 @@
+web: gunicorn symptom_tracker.wsgi --log-file -

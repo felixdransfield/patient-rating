@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<h2>PANSS Scores</h2>
+{% for panss in panss %}
+
+<h3>{{panss.rating_date}}</h3>
+<!--<p>Rating 1: {{panss.Q1}}</p>-->
+<!--<p>Rating 2: {{panss.Q2}}</p>-->
+<!--<p>Rating 1: {{panss.Q3}}</p>-->
+<!--<p>Rating 2: {{panss.Q4}}</p>-->
+<!--<p>Rating 1: {{panss.Q5}}</p>-->
+
+<strong>Rater = {{panss.created_by_id}}</strong>
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

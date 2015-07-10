@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+<ul>
+    <a href="/patient/all/"><li>Cancel</li></a>
+</ul>
+
+{% endblock %}
+
+{% block content %}
+
+<form action="/patient/create/" method="post">{% csrf_token %}
+<ul>
+    {{form.as_ul}}
+
+</ul>
+
+
+
+<input type="submit" name="submit" value="Create Patient">
+</form>
+
+{% endblock %}
