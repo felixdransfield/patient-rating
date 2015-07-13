@@ -7,7 +7,7 @@ mysql:
  socket: /tmp/mysql.sock
  username: root
  password: 
- database: django_db
+ database: symtrack_db
  compress: false
 destination:
  # if file is given, output goes to file, else postgres
