@@ -1,6 +1,7 @@
 __author__ = 'felixdransfield'
 import os
 import dj_database_url
+import os.path
 
 PROJECT_DIRECTORY = os.getcwd()
 
