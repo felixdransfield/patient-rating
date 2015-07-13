@@ -117,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/mysql2pgsql/lib/postgres_writer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5448718" vertical-offset="600" max-vertical-offset="3540">
-              <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
+              <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -949,7 +949,7 @@
     <entry file="file://$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/mysql2pgsql/lib/postgres_writer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5448718" vertical-offset="600" max-vertical-offset="3540">
-          <caret line="74" column="89" selection-start-line="74" selection-start-column="89" selection-end-line="74" selection-end-column="89" />
+          <caret line="74" column="42" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
