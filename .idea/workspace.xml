@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c0c42a-2fc0-42c4-a8bd-21bd091b1675" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/default.css" afterPath="$PROJECT_DIR$/static/css/default.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/forms.py" afterPath="$PROJECT_DIR$/rating/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/models.py" afterPath="$PROJECT_DIR$/rating/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/templates/patient.html" afterPath="$PROJECT_DIR$/rating/templates/patient.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charts/urls.py" afterPath="$PROJECT_DIR$/charts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/urls.py" afterPath="$PROJECT_DIR$/rating/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charts/views.py" afterPath="$PROJECT_DIR$/charts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/views.py" afterPath="$PROJECT_DIR$/rating/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="symptom_tracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,20 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="patient.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="patient.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rating/templates/patient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="615">
-              <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.5675676" vertical-offset="0" max-vertical-offset="925">
+              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rating/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6670282" vertical-offset="720" max-vertical-offset="1710">
+            <state vertical-scroll-proportion="-22.777779" vertical-offset="720" max-vertical-offset="1710">
               <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
@@ -150,9 +140,9 @@
         <option value="$PROJECT_DIR$/rating/templates/HCR2_form.html" />
         <option value="$PROJECT_DIR$/rating/templates/HCR20_form.html" />
         <option value="$PROJECT_DIR$/rating/urls.py" />
-        <option value="$PROJECT_DIR$/rating/templates/patient.html" />
         <option value="$PROJECT_DIR$/rating/forms.py" />
         <option value="$PROJECT_DIR$/rating/views.py" />
+        <option value="$PROJECT_DIR$/rating/templates/patient.html" />
       </list>
     </option>
   </component>
@@ -740,14 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rating/templates/patient.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="615">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rating/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
@@ -789,12 +771,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rating/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6670282" vertical-offset="720" max-vertical-offset="1710">
+        <state vertical-scroll-proportion="-22.777779" vertical-offset="720" max-vertical-offset="1710">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
             <element signature="e#2687#3209#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rating/templates/patient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5675676" vertical-offset="0" max-vertical-offset="925">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
