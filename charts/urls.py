@@ -23,7 +23,10 @@ from django.conf.urls import include, url
 
 
 urlpatterns = [
-    url(r'(?P<patient_id>\d+)/$', 'charts.views.chartView'),
+    url(r'^P/(?P<patient_id>\d+)/$', 'charts.views.Pchart'),
+    url(r'^N/(?P<patient_id>\d+)/$', 'charts.views.Nchart'),
+    url(r'^G/(?P<patient_id>\d+)/$', 'charts.views.Gchart'),
+    url(r'^S/(?P<patient_id>\d+)/$', 'charts.views.Schart'),
 
 
 

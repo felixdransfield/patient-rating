@@ -8,16 +8,29 @@
 <p>Date of Admission:  {{ patient.DOA }}</p>
 <p>Date of Discharge:  {{ patient.DOD }}</p>
 
+<br><br>
 
 
+<h2>PANSS (Positive and Negative Syndrome Scale</h2>
+<a href="/patient/panss/new/{{ patient.id }}" class="btn blue">Add Panss score</a>
+<a href="/patient/panss/{{ patient.id }}" class="btn blue">View Panss updates</a>
+<h3>Charts</h3>
+<a href="/chart/P/{{ patient.id }}" class="btn blue">Positive</a>
+<a href="/chart/N/{{ patient.id }}" class="btn blue">Negative</a>
+<a href="/chart/G/{{ patient.id }}" class="btn blue">General</a>
+<a href="/chart/S/{{ patient.id }}" class="btn blue">Somatic</a>
+
+<br><br>
+
+<h2>HCR20</h2>
+<a href="/patient/HCR20/new/{{ patient.id }}" class="btn blue">Add HCR20 score</a>
+<a href="/patient/panss/{{ patient.id }}" class="btn blue">View Panss updates</a>
+<h3>Charts</h3>
+<a href="/chart/{{ patient.id }}" class="btn blue">View Chart</a>
 
 
-
-
-
-<a href="/patient/panss/new/{{ patient.id }}">Add Panss score</a>
 <!--<a href="/patient/update/{{ patient.id }}">Update</a>-->
-<a href="/patient/panss/{{ patient.id }}">view panss</a>
-<a href="/chart/{{ patient.id }}">view chart</a>
+
+
 
 {% endblock %}

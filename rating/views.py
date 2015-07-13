@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response, render
-from models import Patient, Update, PANSS
-from forms import PatientForm, UpdateForm, PANSSForm
+from models import Patient, Update, PANSS, HCR20
+from forms import PatientForm, UpdateForm, PANSSForm, HCR20Form
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
@@ -51,8 +51,6 @@ def panss(request, patient_id):
 
 
 
-
-
 @login_required
 def panssForm(request, patient_id):
     a = Patient.objects.get(id=patient_id)
@@ -78,6 +76,32 @@ def panssForm(request, patient_id):
     args['form'] = f
 
     return render_to_response('panss_form.html', args)
+
+@login_required
+def HCR20Form(request, patient_id):
+    a = Patient.objects.get(id=patient_id)
+
+    if request.method == "POST":
+        f = HCR20Form(request.POST)
+        if f.is_valid():
+            c = f.save(commit=False)
+            c.rating_date = timezone.now()
+            c.created_by_id = request.user.id
+
+            c.patient = a
+            c.save()
+
+            return HttpResponseRedirect('/patient/get/%s' % patient_id)
+    else:
+        f = HCR20Form()
+
+    args = {}
+    args.update(csrf(request))
+
+    args['patient'] = a
+    args['form'] = f
+
+    return render_to_response('HCR20_form.html', args)
 
 
 

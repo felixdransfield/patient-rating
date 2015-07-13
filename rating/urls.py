@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^update/(?P<patient_id>\d+)/$', 'rating.views.update_patient'),
     url(r'^panss/new/(?P<patient_id>\d+)/$', 'rating.views.panssForm'),
     url(r'^panss/(?P<patient_id>\d+)/$', 'rating.views.panss'),
+    url(r'^HCR20/new/(?P<patient_id>\d+)/$', 'rating.views.HCR20Form'),
     #url(r'^api/', include(patient_resource.urls)),
 
 

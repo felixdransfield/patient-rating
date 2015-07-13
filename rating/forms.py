@@ -1,7 +1,7 @@
 __author__ = 'felixdransfield'
 
 from django import forms
-from models import Patient, Update, PANSS
+from models import Patient, Update, PANSS, HCR20
 from django.utils.safestring import mark_safe
 
 
@@ -128,13 +128,84 @@ class PANSSForm(forms.ModelForm):
                                  widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
 
 
-
-
     class Meta:
         model = PANSS
         fields = ('P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'G1', 'G2', 'G3', 'G4',
                     'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12', 'G13', 'G14', 'G15', 'G16', 'S1', 'S2', 'S3')
         widgets = {'fields': forms.RadioSelect}
+
+
+
+
+class HCR20Form(forms.ModelForm):
+    H1 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H2 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H3 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H4 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H5 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H6 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H7 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H8 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H9 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    H10 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    C1 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    C2 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    C3 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    C4 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    C5 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    R1 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    R2 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    R3 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    R4 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+    R5 = forms.ChoiceField(choices=rating_choices,
+                                 initial=0,
+                                 widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
+
+    class Meta:
+        model = HCR20
+        fields = ('H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'H10', 'C1', 'C2', 'C3', 'C4', 'C5', 'R1', 'R2', 'R3',
+                    'R4', 'R5')
+        widgets = {'fields': forms.RadioSelect}
+
+
 
 
 class UpdateForm(forms.ModelForm):
