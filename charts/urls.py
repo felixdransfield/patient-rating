@@ -22,11 +22,15 @@ from django.conf.urls import include, url
 
 
 
+#Loads Charts for both PANSS and HCR20 - split into their sub scales
 urlpatterns = [
-    url(r'^P/(?P<patient_id>\d+)/$', 'charts.views.Pchart'),
-    url(r'^N/(?P<patient_id>\d+)/$', 'charts.views.Nchart'),
-    url(r'^G/(?P<patient_id>\d+)/$', 'charts.views.Gchart'),
-    url(r'^S/(?P<patient_id>\d+)/$', 'charts.views.Schart'),
+    url(r'^Panss/Positive/(?P<patient_id>\d+)/$', 'charts.views.Pchart'),
+    url(r'^Panss/Negative/(?P<patient_id>\d+)/$', 'charts.views.Nchart'),
+    url(r'^Panss/General/(?P<patient_id>\d+)/$', 'charts.views.Gchart'),
+    url(r'^Panss/Additional/(?P<patient_id>\d+)/$', 'charts.views.Schart'),
+    url(r'^HCR20/Historical/(?P<patient_id>\d+)/$', 'charts.views.Hchart'),
+    url(r'^HCR20/Clinical/(?P<patient_id>\d+)/$', 'charts.views.Cchart'),
+    url(r'^HCR20/Risk/(?P<patient_id>\d+)/$', 'charts.views.Rchart'),
 
 
 

@@ -148,7 +148,7 @@ UPLOAD_FILE_PATTERN = "assets/uploaded_files/%s_%s"
 try:
     from local_settings import *
 except ImportError as e:
-    pass
+    print 'Unable to load local_settings.py:', e
 
 
 

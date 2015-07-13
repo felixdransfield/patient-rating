@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<h2>HCR20 Scores</h2>
+{% for hcr20 in hcr20 %}
+
+<h3>{{hcr20.rating_date}}</h3>
+
+
+<strong>Rater = {{hcr20.created_by_id}}</strong>
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

@@ -1,10 +1,11 @@
 __author__ = 'felixdransfield'
 
 from django import forms
+from django.forms.models import ModelForm, ModelFormMetaclass
 from models import Patient, Update, PANSS, HCR20
 from django.utils.safestring import mark_safe
 
-
+#THe Patient form for creating a new patient - with the basic info
 class PatientForm(forms.ModelForm):
 
 
@@ -13,6 +14,10 @@ class PatientForm(forms.ModelForm):
         fields = ('name','hospital_id', 'DOB', 'DOA', 'DOD')
 
 
+
+
+#rating choices are used for Panns and HCR20 - they are used to give subjective ratings for each field in the forms.
+#they are used in ChoiceField(choice...)
 rating_choices = (
         (1, 'Better'),
         (0, 'Same'),
@@ -20,13 +25,17 @@ rating_choices = (
 
     )
 
+#Renders the Radioselect buttons horizontally (for speed in filling in  forms)
 class HorizontalRadioRenderer(forms.RadioSelect.renderer):
 
     def render(self):
         return mark_safe(u'\n'.join([u'%s\n' % w for w in self]))
 
 
+#The PANSS form for adding a PANSS update to a patient, Gives each question a radioselect button whit rating_choices arguments
 class PANSSForm(forms.ModelForm):
+
+
     P1 = forms.ChoiceField(choices=rating_choices,
                                  initial=0,
                                  widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
@@ -128,6 +137,8 @@ class PANSSForm(forms.ModelForm):
                                  widget=forms.RadioSelect(renderer=HorizontalRadioRenderer))
 
 
+
+
     class Meta:
         model = PANSS
         fields = ('P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'G1', 'G2', 'G3', 'G4',
@@ -137,6 +148,7 @@ class PANSSForm(forms.ModelForm):
 
 
 
+#The PANSS form for adding a PANSS update to a patient, Gives each question a radioselect button whit rating_choices arguments
 class HCR20Form(forms.ModelForm):
     H1 = forms.ChoiceField(choices=rating_choices,
                                  initial=0,
@@ -208,6 +220,7 @@ class HCR20Form(forms.ModelForm):
 
 
 
+#Depreceated
 class UpdateForm(forms.ModelForm):
 
     class Meta:

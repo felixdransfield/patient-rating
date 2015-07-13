@@ -15,18 +15,20 @@
 <a href="/patient/panss/new/{{ patient.id }}" class="btn blue">Add Panss score</a>
 <a href="/patient/panss/{{ patient.id }}" class="btn blue">View Panss updates</a>
 <h3>Charts</h3>
-<a href="/chart/P/{{ patient.id }}" class="btn blue">Positive</a>
-<a href="/chart/N/{{ patient.id }}" class="btn blue">Negative</a>
-<a href="/chart/G/{{ patient.id }}" class="btn blue">General</a>
-<a href="/chart/S/{{ patient.id }}" class="btn blue">Somatic</a>
+<a href="/chart/Panss/Positive/{{ patient.id }}" class="btn blue">Positive</a>
+<a href="/chart/Panss/Negative/{{ patient.id }}" class="btn blue">Negative</a>
+<a href="/chart/Panss/General/{{ patient.id }}" class="btn blue">General</a>
+<a href="/chart/Panss/Additional/{{ patient.id }}" class="btn blue">Additional Symptoms</a>
 
 <br><br>
 
-<!--<h2>HCR20</h2>-->
-<!--<a href="/patient/HCR20/new/{{ patient.id }}" class="btn blue">Add HCR20 score</a>-->
-<!--<a href="/patient/panss/{{ patient.id }}" class="btn blue">View Panss updates</a>-->
-<!--<h3>Charts</h3>-->
-<!--<a href="/chart/{{ patient.id }}" class="btn blue">View Chart</a>-->
+<h2>HCR20</h2>
+<a href="/patient/HCR20/new/{{ patient.id }}" class="btn blue">Add HCR20 score</a>
+<a href="/patient/HCR20/{{ patient.id }}" class="btn blue">View HCR20 updates</a>
+<h3>Charts</h3>
+<a href="/chart/HCR20/Historical/{{ patient.id }}" class="btn blue">Historical</a>
+<a href="/chart/HCR20/Clinical/{{ patient.id }}" class="btn blue">Clinical</a>
+<a href="/chart/HCR20/Risk/{{ patient.id }}" class="btn blue">Risk Management</a>
 
 
 <!--<a href="/patient/update/{{ patient.id }}">Update</a>-->

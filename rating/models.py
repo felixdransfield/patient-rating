@@ -6,6 +6,7 @@ from django.utils import timezone
 
 # Create your models here.
 
+#Model for Patient Instance
 class Patient(models.Model):
     name = models.CharField(max_length=10)
     hospital_id = models.IntegerField(
@@ -22,10 +23,10 @@ class Patient(models.Model):
     def __unicode__(self):
         return self.name
 
-
+#Model for PANSS Instance
 class PANSS(models.Model):
     rating_date = models.DateTimeField('date of rating', default=timezone.now, blank=True)
-    P1 = models.IntegerField('Delusions')
+    P1 = models.IntegerField(verbose_name='Delusions')
     P2 = models.IntegerField('Conceptual Disorganisation')
     P3 = models.IntegerField('Hallucinatory Behaviour')
     P4 = models.IntegerField('Excitement')
@@ -64,7 +65,7 @@ class PANSS(models.Model):
     def __unicode__(self):
         return '%s %s' % (self.patient, self.rating_date)
 
-
+#Model for HCR20 Instance
 class HCR20(models.Model):
     rating_date = models.DateTimeField('date of rating', default=timezone.now, blank=True)
     H1 = models.IntegerField('Previous Violence')
@@ -86,14 +87,14 @@ class HCR20(models.Model):
     R2 = models.IntegerField('Exposure to Destabilizers')
     R3 = models.IntegerField('Lack of Personal Support')
     R4 = models.IntegerField('Noncompliance with Remediation Attempts')
-    R5 = models.IntegerField('Stress')
+    R5 = models.IntegerField('Depression')
     patient = models.ForeignKey(Patient)
     created_by = models.ForeignKey(User)
 
     def __unicode__(self):
         return '%s %s' % (self.patient, self.rating_date)
 
-
+#Depreceated
 class Update(models.Model):
     rating_1 = models.IntegerField()
     rating_2 = models.IntegerField()

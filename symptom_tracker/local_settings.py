@@ -15,7 +15,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import os.path
 import dj_database_url
-from settings import PROJECT_DIRECTORY
+from settings import PROJECT_DIR
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
