@@ -3,9 +3,9 @@ import os
 import dj_database_url
 import os.path
 
-PROJECT_DIR = os.path.dirname(__file__)
+#PROJECT_DIR = os.path.dirname(__file__)
 
-#PROJECT_DIRECTORY = os.getcwd()
+PROJECT_DIR = os.getcwd()
 
 DEBUG = True
 
