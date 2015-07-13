@@ -3,7 +3,9 @@ import os
 import dj_database_url
 import os.path
 
-PROJECT_DIRECTORY = os.getcwd()
+PROJECT_DIR = os.path.dirname(__file__)
+
+#PROJECT_DIRECTORY = os.getcwd()
 
 DEBUG = True
 
@@ -102,10 +104,10 @@ ROOT_URLCONF = 'symptom_tracker.urls'
 WSGI_APPLICATION = 'symptom_tracker.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIRECTORY,'templates/'),
-    os.path.join(PROJECT_DIRECTORY,'rating/templates/'),
-    os.path.join(PROJECT_DIRECTORY,'userprofile/templates/'),
-    os.path.join(PROJECT_DIRECTORY,'charts/templates/'),
+    os.path.join(PROJECT_DIR,'templates/'),
+    os.path.join(PROJECT_DIR,'rating/templates/'),
+    os.path.join(PROJECT_DIR,'userprofile/templates/'),
+    os.path.join(PROJECT_DIR,'charts/templates/'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
