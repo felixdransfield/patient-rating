@@ -13,11 +13,11 @@ destination:
  # if file is given, output goes to file, else postgres
  file: 
  postgres:
-  hostname: ec2-54-83-46-91.compute-1.amazonaws.com
+  hostname: ec2-107-22-175-206.compute-1.amazonaws.com
   port: 5432
-  username: ccxnnlwcftsdao
-  password: msQXvlex_jT6RI4HVs4F22CI3K
-  database: d110lkv9hrrgp8
+  username: zgwfwheiswuaaj
+  password: 82VjpVxH_Ee23YV3bZ5abPZIG3
+  database: d31j67hsv8liqr
 
 # if tables is given, only the listed tables will be converted.  leave empty to convert all tables.
 #only_tables:
