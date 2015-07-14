@@ -2,3 +2,4 @@ sym_track
 *.DS_Store
 *.pyc
 __pycache__
+local_settings.py
