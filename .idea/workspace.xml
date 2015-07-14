@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82c0c42a-2fc0-42c4-a8bd-21bd091b1675" name="Default" comment="" />
+    <list default="true" id="82c0c42a-2fc0-42c4-a8bd-21bd091b1675" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/default.css" afterPath="$PROJECT_DIR$/static/css/default.css" />
+    </list>
     <ignored path="symptom_tracker.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="default.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/default.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
-              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.02388535" vertical-offset="0" max-vertical-offset="1890">
+              <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/django/contrib/sites/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7197453" vertical-offset="1080" max-vertical-offset="1770">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="1770">
+              <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -145,7 +147,6 @@
         <option value="$PROJECT_DIR$/rating/templates/panss_form.html" />
         <option value="$PROJECT_DIR$/rating/templates/create_patient.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/static/css/default.css" />
         <option value="$PROJECT_DIR$/rating/templates/HCR2_form.html" />
         <option value="$PROJECT_DIR$/mysql2pgsql.yml" />
         <option value="$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/mysql2pgsql/lib/postgres_writer.py" />
@@ -160,6 +161,7 @@
         <option value="$PROJECT_DIR$/rating/urls.py" />
         <option value="$PROJECT_DIR$/rating/views.py" />
         <option value="$PROJECT_DIR$/symptom_tracker/settings.py" />
+        <option value="$PROJECT_DIR$/static/css/default.css" />
       </list>
     </option>
   </component>
@@ -869,18 +871,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/default.css">
+    <entry file="file://$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/django/contrib/sites/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1080" max-vertical-offset="1770">
+          <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sym_track/lib/python2.7/site-packages/django/contrib/sites/models.py">
+    <entry file="file://$PROJECT_DIR$/static/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7197453" vertical-offset="1080" max-vertical-offset="1770">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.02388535" vertical-offset="0" max-vertical-offset="1890">
+          <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
           <folding />
         </state>
       </provider>
