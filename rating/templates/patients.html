@@ -3,9 +3,9 @@
 {% block sidebar %}
 
 <ul>
-    <a href="/"><li>Home</li></a>
-    <a href="/patient/all"><li>Patients</li></a>
-    <a href="/patient/create"><li>Create Patient</li></a>
+    <a href="/"><li><p>Home</p></li></a>
+    <a href="/patient/all"><li><p>Patients</p></li></a>
+    <a href="/patient/create"><li><p>Create Patient</p></li></a>
 </ul>
 
 {% endblock %}
@@ -14,7 +14,7 @@
 
 {% for patient in patients %}
 <div>
-    <h2><a href="/patient/get/{{ patient.id }}/">{{ patient.name }}</a> </h2>
+   <h2> <a class="link" href="/patient/get/{{ patient.id }}/">{{ patient.name }}</a></h2>
 
     </div>
 

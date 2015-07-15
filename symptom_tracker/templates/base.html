@@ -8,20 +8,28 @@
     <link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}">
     <script type=”text/javascript” src="{% static "assets/js/jquery-2.1.4.min.js" %}"></script>
     <script type=”text/javascript” src="{% static "assets/js/Highcharts-4.1.7/js/highcharts.js" %}"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-     <!--<div class ="header"></div>-->
+     <div class ="header">
+         <div class="headerContainer">
+            <div id="title">Symptom-Tracker<span id="sub-title">BETA</span></div>
+             <div id="headerNav">
+                 <a href="/"><i class="fa fa-home fa-2x" style="color:#55acee;"></i></a>
+             </div>
+         </div>
+     </div>
     <div id ="page">
         <div id ="sidebar">
             {% block sidebar%}
             <ul>
-                <a href="/accounts/login"> <li>Login</li></a>
-                <a href="/accounts/register"> <li>Register</li></a>
-                <a href="/accounts/profile"> <li>Profile</li></a>
-                <a href="/patient/all"> <li>Patients</li></a>
-                <a href="/admin"> <li>Admin</li></a>
+                <a href="/accounts/login"> <li><p>Login</p></li></a>
+                <a href="/accounts/register"> <li><p>Register</p></li></a>
+                <a href="/accounts/profile"> <li><p>Profile</p></li></a>
+                <a href="/patient/all"> <li><p>Patients</p></li></a>
+                <a href="/admin"> <li><p>Admin</p></li></a>
             </ul>
             {% endblock %}
         </div>

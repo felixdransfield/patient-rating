@@ -10,7 +10,7 @@
   {% endfor %}
   
   <form action="/accounts/register/" method="post">{% csrf_token %}
-  {{form}}
+  {{form.as_ul}}
   
   
   

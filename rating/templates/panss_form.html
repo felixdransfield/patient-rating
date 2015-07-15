@@ -2,12 +2,14 @@
 
 {% block sidebar %}
 <ul>
-    <a href="/patient/get/{{patient.id}}"><li>Cancel</li></a>
+    <a href="/patient/get/{{patient.id}}"><li><p>Cancel</p></li></a>
 </ul>
 
 {% endblock %}
 
 {% block content %}
+
+<h1>New PANSS Rating for {{ patient.name }}</h1>
 
 <form action="/patient/panss/new/{{patient.id}}/" method="post">{% csrf_token %}
 <ul>
