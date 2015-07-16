@@ -12,6 +12,11 @@ class PatientForm(forms.ModelForm):
     class Meta:
         model = Patient
         fields = ('name','hospital_id', 'DOB', 'DOA', 'DOD')
+        widgets = {
+            'DOB': forms.DateInput(attrs={'type':'date'}),
+            'DOA': forms.DateInput(attrs={'type':'date'}),
+            'DOD': forms.DateInput(attrs={'type':'date'})
+        }
 
 
 

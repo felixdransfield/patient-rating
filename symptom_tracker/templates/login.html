@@ -6,6 +6,12 @@
         <p class="error">Sorry, that's not a username or password</p>
     {% endif %}
 
+<div class="centered">
+
+<h1>Login</h1>
+
+
+
     <form action="/accounts/auth/" method="post">{% csrf_token %}
         <label for="username">User name:</label>
         <input type="text" name="username" value="" id="username">
@@ -14,8 +20,13 @@
 
 
 
-       <input type="submit" value="login"  />
+       <input type="submit" value="login" class="btn blue"  />
 
     </form>
+<br><br>
+<h2>Not Registered? click here to create an account</h2>
+<a href="/accounts/register" class="btn blue">Register</a>
+
+</div>
 
 {% endblock %}

@@ -1,15 +1,89 @@
 
 /* ---------------- Main Body Declarations --------------------*/
+    html{
+            height: 100%;
+        }
    body {
             text-align: center;
             font-family: 'Open Sans', sans-serif;
             background: #dbebec;
             margin: 0;
+            height: 100%;
 
         }
     ul{
             list-style-type:none;
     }
+
+    input[type=submit] {
+        font-family: 'Open Sans', sans-serif;
+        border: none
+    }
+
+    .centered{
+        text-align: center;
+
+    }
+
+    form{
+        list-style-type: none;
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 15px;
+        width: 90%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 30px;
+    }
+
+   .rating-form form{
+        max-width: 550px;
+   }
+
+   .mytable{
+        margin: 0 auto;
+        background: #f4f7f8;
+   }
+
+   .mytable th {
+        color: #55acee;
+        border: 1px solid #cccccc;
+        letter-spacing: 2px;
+        text-align: left;
+        padding: 6px 6px 6px 12px;
+        background: #edf1f4;
+   }
+
+   .mytable td {
+        border: 1px solid #cccccc;
+        padding: 6px 6px 6px 12px;
+        color: #6D929B;
+   }
+
 /* ---------------- Text -------------------*/
 
         h1{
@@ -55,20 +129,18 @@
 
 
 /* ---------------- Content/Sidebar -------------------*/
-         #page {
-            width:960px;
-            text-align: left;
-            margin: 0 auto 0 auto;
-            height: calc(100vh - 85px);
-            height: -o-calc(100vh - 85px); /* opera */
-            height: -webkit-calc(100vh - 85px); /* google, safari */
-            height: -moz-calc(100vh - 85px); /* firefox */
 
+       #page{
+            height: 100%;
+            margin: 0 auto;
+            width: 960px;
             -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.25);
             -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.25);
             box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.25);
 
+
         }
+
 
         #sidebar {
             background: #edf1f4;
@@ -100,15 +172,18 @@
         #content {
             background: #ffffff;
             float: left;
-             width: 758px;
+            width: 758px;
 
             height: 100%
+
         }
 
 
 
         #contentContainer{
             padding: 25px;
+            text-align: left;
+            overflow: hidden;
         }
 
 

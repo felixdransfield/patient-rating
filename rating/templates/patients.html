@@ -5,12 +5,13 @@
 <ul>
     <a href="/"><li><p>Home</p></li></a>
     <a href="/patient/all"><li><p>Patients</p></li></a>
-    <a href="/patient/create"><li><p>Create Patient</p></li></a>
+    <a href="/patient/create"><li><p>Add Patient</p></li></a>
 </ul>
 
 {% endblock %}
 
 {% block content %}
+<h1>Patients</h1>
 
 {% for patient in patients %}
 <div>
