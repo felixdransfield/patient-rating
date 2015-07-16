@@ -59,7 +59,7 @@ class PANSS(models.Model):
     S1 = models.IntegerField('S1 - Anger', default=0)
     S2 = models.IntegerField('S2 - Difficulty in Delaying Gratification', default=0)
     S3 = models.IntegerField('S3 - Affective Lability', default=0)
-    patient = models.ForeignKey(Patient)
+    patient = models.ForeignKey(Patient, related_name='patientname')
     created_by = models.ForeignKey(User)
 
     def __unicode__(self):

@@ -49,7 +49,9 @@ def create(request):
 @login_required
 def panss(request, patient_id):
 
-    return render(request, 'panss.html',{'panss': PANSS.objects.filter(patient__id=patient_id)})
+    return render(request, 'panss.html',{'panss': PANSS.objects.filter(patient__id=patient_id),
+                                         'patient': Patient.objects.get(id=patient_id),
+                                         'full_name': request.user.username})
 
 
 #creates a new Panss rating - using Panss Form

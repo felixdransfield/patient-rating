@@ -47,8 +47,12 @@ def Pchart(request, patient_id):
                 'S1',
                 'S2',
                 'S3',
-                'id',]}
-             ])
+                'id',]},
+          #    {'options': {
+          #   'source': Patient.objects.filter()},
+          # 'terms': [
+          #   'name']}
+         ])
 
     #Step 2: declares the variables for the chart
     cht = Chart(
@@ -83,7 +87,7 @@ def Pchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render_to_response('chart.html', {'ds':cht, 'cht': Patient.objects.get(id=patient_id)})
 
 #Chart View for Negative subscale of PANSS
 def Nchart(request, patient_id):
