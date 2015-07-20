@@ -32,14 +32,13 @@ urlpatterns = [
     #create patient form
     url(r'^create/$', 'rating.views.create'),
 
-    #depreceated
-    url(r'^update/(?P<patient_id>\d+)/$', 'rating.views.update_patient'),
-
     #create new panss rating
     url(r'^panss/new/(?P<patient_id>\d+)/$', 'rating.views.panssForm'),
 
     #show previous panss ratings
     url(r'^panss/(?P<patient_id>\d+)/$', 'rating.views.panss'),
+
+    url(r'^panss/(?P<patient_id>\d+)/(?P<panss_id>\d+)/$', 'rating.views.panssItem'),
 
     #create new HCR20 rating
     url(r'^HCR20/new/(?P<patient_id>\d+)/$', 'rating.views.hcr20Form'),

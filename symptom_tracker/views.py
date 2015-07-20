@@ -15,7 +15,7 @@ def home(request):
 def login(request):
     c = {}
     c.update(csrf(request))
-    return render_to_response('login.html', c)
+    return render(request, 'login.html', c)
 
 def auth_view(request):
     username = request.POST.get('username', '')
@@ -29,15 +29,15 @@ def auth_view(request):
         return HttpResponseRedirect('/accounts/invalid')
 
 def loggedin(request):
-    return render_to_response('loggedin.html',
+    return render(request, 'loggedin.html',
         {'full_name': request.user.username})
 
 def invalid_login(request):
-    return render_to_response('invalid_login.html')
+    return render(request, 'invalid_login.html')
 
 def logout(request):
     auth.logout(request)
-    return render_to_response('logout.html')
+    return render(request, 'logout.html')
 
 def register_user(request):
     if request.method == 'POST':
@@ -52,7 +52,7 @@ def register_user(request):
 
     args['form'] = MyRegistrationForm()
 
-    return render_to_response('register.html', args)
+    return render(request, 'register.html', args)
 
 def register_success(request):
-    return render_to_response('register_success.html')
+    return render(request, 'register_success.html')

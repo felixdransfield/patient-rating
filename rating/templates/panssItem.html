@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block sidebar %}
+
+<ul>
+    <a href="/patient/panss/{{patient.id}}"> <li><p>Back</p></li></a>
+
+</ul>
+
+{% endblock %}
+
+{% block content %}
+
+
+{% for panss in panssItem %}
+
+<h1>PANSS Rating for {{ patient.name }} on {{panss.rating_date}} </h1>
+
+<h2> Rated By: {{panss.created_by}}</h2>
+
+
+<p>{{ panss.P1 }}</p>
+
+
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

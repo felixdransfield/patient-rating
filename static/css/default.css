@@ -106,7 +106,7 @@
             margin: 0 auto;
         }
 
-#title{
+.title{
             text-align: left;
             font-size: 25px;
             color: #55acee;
@@ -116,15 +116,26 @@
             float: left;
         }
 
-#sub-title{
+.sub-title{
             font-size:10px;
             color: red;
     }
 #headerNav{
-        width: 100px;
+        width: 250px;
         display: inline-block;
         float: right;
         padding-top: 15px;
+    }
+
+    #headerNav i{
+        color: #55acee;
+        padding-left: 10px;
+    }
+
+.loggedin{
+        font-size: 12px;
+        color: #55acee;
+
     }
 
 
@@ -167,6 +178,26 @@
         #sidebar li  {
             border-bottom: 1px solid #cccccc;
             text-align: center;
+        }
+
+        #sidebar .currentPage{
+            background-color: #ffffff;
+        }
+
+        #sidebar .sidebarSub{
+            margin-left: 40px;
+            border-left: 1px solid #cccccc;
+
+        }
+        #sidebar .sidebarSub2{
+            margin-left: 80px;
+            border-left: 1px solid #cccccc;
+
+        }
+
+        #sidebar p{
+            padding: 20px ;
+            margin: 0 ;
         }
 
         #content {

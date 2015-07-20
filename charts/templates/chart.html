@@ -1,4 +1,12 @@
 {% extends "base.html" %}
+{% block sidebar %}
+
+<ul>
+    <a href="/patient/get/{{patient.id}}"> <li><p>Back</p></li></a>
+
+</ul>
+
+{% endblock %}
 {% block content %}
 {% load static %}
 <head>
@@ -17,7 +25,5 @@
 
 </body>
 </body>
-
-<!--<a href="/patient/get/{{patient.id}}" class="btn blue">Back</a>-->
 
 {% endblock %}

@@ -6,14 +6,14 @@ from chartit import DataPool, Chart
 
 #Chart View for Positive subscale of PANSS
 def Pchart(request, patient_id):
-    #Step 1: Create a DataPool with the data we want to retrieve.
+    #Step 1: Create a DataPool with the data we want to retrieve
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
             [{'options': {
                'source': PANSS.objects.filter(patient__id=patient_id)},
               'terms': [
-                'patient_id',
                 'P1',
                 'P2',
                 'P3',
@@ -48,10 +48,7 @@ def Pchart(request, patient_id):
                 'S2',
                 'S3',
                 'id',]},
-          #    {'options': {
-          #   'source': Patient.objects.filter()},
-          # 'terms': [
-          #   'name']}
+
          ])
 
     #Step 2: declares the variables for the chart
@@ -74,7 +71,7 @@ def Pchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'Positive Symptom scores for %s' % patient_id},
+                   'text': 'Positive Symptom scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -87,11 +84,12 @@ def Pchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht, 'cht': Patient.objects.get(id=patient_id)})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id) })
 
 #Chart View for Negative subscale of PANSS
 def Nchart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -155,7 +153,7 @@ def Nchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'Negative Symptom scores for %s' % patient_id},
+                   'text': 'Negative Symptom scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -168,11 +166,12 @@ def Nchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
 
 #Chart View for General subscale of PANSS
 def Gchart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -245,7 +244,7 @@ def Gchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'General Symptom scores for %s' % patient_id},
+                   'text': 'General Symptom scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -258,11 +257,12 @@ def Gchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
 
 #Chart View for Additonal Symptoms subscale of PANSS
 def Schart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -322,7 +322,7 @@ def Schart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'Additional Symptoms scores for %s' % patient_id},
+                   'text': 'Additional Symptoms scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -335,11 +335,12 @@ def Schart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
 
 #Chart View for Historical subscale of HCR20
 def Hchart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -393,7 +394,7 @@ def Hchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'HCR20 Historical scores for %s' % patient_id},
+                   'text': 'HCR20 Historical scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -406,11 +407,12 @@ def Hchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
 
 #Chart View for Clinical subscale of HCR20
 def Cchart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -459,7 +461,7 @@ def Cchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'HCR20 Clinical scores for %s' % patient_id},
+                   'text': 'HCR20 Clinical scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -472,11 +474,12 @@ def Cchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
 
 #Chart View for Risk Management subscale of HCR20
 def Rchart(request, patient_id):
     #Step 1: Create a DataPool with the data we want to retrieve.
+    name =  Patient.objects.get(id=patient_id)
     ds = \
         DataPool(
            series=
@@ -525,7 +528,7 @@ def Rchart(request, patient_id):
                   }}],
             chart_options =
               {'title': {
-                   'text': 'HCR20 Risk Management scores for %s' % patient_id},
+                   'text': 'HCR20 Risk Management scores for %s' % name},
                'xAxis': {
                     'title': {
                        'text': 'Rating'}},
@@ -538,4 +541,4 @@ def Rchart(request, patient_id):
 
 
     #Step 3: Send the chart object to the template.
-    return render_to_response('chart.html', {'ds':cht})
+    return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})

@@ -26,7 +26,7 @@ class Patient(models.Model):
 #Model for PANSS Instance
 class PANSS(models.Model):
     rating_date = models.DateField('date of rating', default=timezone.now, blank=True)
-    P1 = models.IntegerField('P1 - Delusions', default=0)
+    P1 = models.IntegerField(verbose_name='P1 - Delusions', default=0)
     P2 = models.IntegerField('P2 - Conceptual Disorganisation', default=0)
     P3 = models.IntegerField('P3 - Hallucinatory Behaviour', default=0)
     P4 = models.IntegerField('P4 - Excitement', default=0)
@@ -62,12 +62,15 @@ class PANSS(models.Model):
     patient = models.ForeignKey(Patient, related_name='patientname')
     created_by = models.ForeignKey(User)
 
+    #returns name of patient and date for admin purposes
     def __unicode__(self):
         return '%s %s' % (self.patient, self.rating_date)
 
+
+
 #Model for HCR20 Instance
 class HCR20(models.Model):
-    rating_date = models.DateTimeField('date of rating', default=timezone.now, blank=True)
+    rating_date = models.DateField('date of rating', default=timezone.now, blank=True)
     H1 = models.IntegerField('Previous Violence')
     H2 = models.IntegerField('Young Age at First Violent Incident')
     H3 = models.IntegerField('Relationship Instability')

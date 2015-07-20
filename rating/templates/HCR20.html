@@ -1,21 +1,42 @@
 {% extends "base.html" %}
+{% block sidebar %}
+
+<ul>
+    <a href="/patient/all"> <li><p>Patients</p></li></a>
+    <a href="/patient/get/{{ patient.id }}/"><li class="sidebarSub"><p>Patient: {{ patient.name }} </p></li></a>
+    <a href="/patient/panss/{{ patient.id }}"><li class="sidebarSub2"><p>PANSS</p></li></a>
+    <a href="/patient/HCR20/{{ patient.id }}"><li  class="currentPage sidebarSub2"><p>HCR20</p></li></a>
+</ul>
+
+{% endblock %}
 
 {% block content %}
 
 
 
 
-<h2>HCR20 Scores</h2>
-{% for hcr20 in hcr20 %}
-
-<h3>{{hcr20.rating_date}}</h3>
+<h1>HCR20 Ratings for {{ patient.name }}</h1>
+<a href="/patient/HCR20/new/{{ patient.id }}" class="btn blue">Add HCR20 Rating</a>
 
 
-<strong>Rater = {{hcr20.created_by_id}}</strong>
 
-{% endfor %}
-
-
+<h3>Charts</h3>
+<a href="/chart/HCR20/Historical/{{ patient.id }}" class="btn blue">Historical</a>
+<a href="/chart/HCR20/Clinical/{{ patient.id }}" class="btn blue">Clinical</a>
+<a href="/chart/HCR20/Risk/{{ patient.id }}" class="btn blue">Risk Management</a>
+<br><br>
+<table class="mytable">
+        <tr>
+            <th>Date of rating</th>
+            <th>Rater</th>
+        </tr>
+        {% for hcr20 in hcr20 %}
+        <tr>
+            <td>{{hcr20.rating_date}}</td>
+            <td>{{hcr20.created_by}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 
 
