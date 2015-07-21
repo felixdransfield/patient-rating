@@ -3,3 +3,4 @@ sym_track
 *.pyc
 __pycache__
 local_settings.py
+.idea/workspace.xml
