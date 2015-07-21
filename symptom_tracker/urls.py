@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^patient/', include('rating.urls')),
     url(r'^accounts/', include('userprofile.urls')),
     url(r'^chart/', include('charts.urls')),
+    url(r'^patient/', include('events.urls')),
 
 
     # User auth urls

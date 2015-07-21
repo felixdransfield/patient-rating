@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response, render
-from models import Patient, Update, PANSS, HCR20
-from forms import PatientForm, UpdateForm, PANSSForm, HCR20Form
+from models import Patient, PANSS, HCR20
+from forms import PatientForm, PANSSForm, HCR20Form
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
@@ -119,7 +119,6 @@ def hcr20(request, patient_id):
 
 
 def panssItem(request, panss_id, patient_id):
-
 
     return render(request, 'panssItem.html',{'panssItem': PANSS.objects.filter(patient__id=patient_id, id=panss_id),
                                          'patient': Patient.objects.get(id=patient_id),

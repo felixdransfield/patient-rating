@@ -2,21 +2,12 @@
 
 {% block content %}
 
-    <h2>Profile</h2>
+    <h1>Profile</h1>
+
+<p>Name: {{ User.first_name }}</p>
 
 
 
-    {% for field in form %}
-        {{field.error}}
-
-    {% endfor %}
-
-
-    <form action="/accounts/profile/" method="post">{% csrf_token %}
-        {{form.as_ul}}
-
-        <input type="submit" value="Update" class="btn blue"/>
-
-    </form>
+<a href="/accounts/profile/edit/{{ user.id }}" class="btn blue">Edit</a>
 
 {% endblock %}

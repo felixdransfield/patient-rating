@@ -108,6 +108,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR,'rating/templates/'),
     os.path.join(PROJECT_DIR,'userprofile/templates/'),
     os.path.join(PROJECT_DIR,'charts/templates/'),
+    os.path.join(PROJECT_DIR,'events/templates/')
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -129,6 +130,8 @@ INSTALLED_APPS = (
     'userprofile',
     'charts',
     'chartit',
+    'events',
+
 
 )
 

@@ -156,10 +156,3 @@ class HCR20Form(forms.ModelForm):
 
 
 
-
-#Depreceated
-class UpdateForm(forms.ModelForm):
-
-    class Meta:
-        model = Update
-        fields = ('rating_1', 'rating_2')
