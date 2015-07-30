@@ -5,23 +5,28 @@ from userprofile.models import UserProfile
 from forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def edit_profile(request, user_id):
-    if request.method == 'POST':
-        form = UserProfileForm(request.POST, instance=request.user.profile)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/accounts/loggedin')
+    a = User.objects.get(id=user_id)
+
+    if request.method == "POST":
+        f = UserProfileForm(request.POST)
+        if f.is_valid():
+            c = f.save(commit=False)
+
+            c.user_id = a
+            c.save()
+            #takes user back to patient profile
+            return HttpResponseRedirect('/accounts/profile/%s' % patient_id)
     else:
-        user = request.user
-        profile = user.profile
-        form = UserProfileForm(instance=profile)
+        f = UserProfileForm()
 
     args = {}
     args.update(csrf(request))
 
-    args['form'] = form
 
+    args['form'] = f
 
     return render(request, 'edit-profile.html', args)
 

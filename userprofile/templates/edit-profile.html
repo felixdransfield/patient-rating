@@ -12,7 +12,7 @@
     {% endfor %}
 
 
-    <form action="/accounts/profile/{{ user.id }}/" method="post">{% csrf_token %}
+    <form action="/accounts/profile/edit/{{ user.id }}/" method="post">{% csrf_token %}
         {{form.as_ul}}
 
         <input type="submit" value="Update" class="btn blue"/>

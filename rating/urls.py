@@ -16,6 +16,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+#from rating.forms import PANSSGeneralForm, PANSSNegativeForm, PANSSPositiveForm
+#from rating.views import PANSSWizard
 #from api import PatientResource
 
 #patient_resource = PatientResource()
@@ -33,7 +35,11 @@ urlpatterns = [
     url(r'^create/$', 'rating.views.create'),
 
     #create new panss rating
-    url(r'^panss/new/(?P<patient_id>\d+)/$', 'rating.views.panssForm'),
+     url(r'^panss/new/(?P<patient_id>\d+)/$', 'rating.views.panssForm'),
+
+
+    #trying to paginate forms
+   # url(r'^panss/new/(?P<patient_id>\d+)/$', PANSSWizard.as_view([PANSSPositiveForm, PANSSNegativeForm, PANSSGeneralForm])),
 
     #show previous panss ratings
     url(r'^panss/(?P<patient_id>\d+)/$', 'rating.views.panss'),

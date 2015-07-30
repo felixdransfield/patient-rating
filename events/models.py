@@ -9,14 +9,10 @@ from django.utils import timezone
 
 
 class Event(models.Model):
-    EVENT_CHOICES = (
-        ('1', 'Medication change'),
-        ('2', 'Management plan change'),
-        ('3', 'Other Stressor')
-    )
-    event = models.CharField(max_length=1, choices=EVENT_CHOICES)
+    event_type = models.CharField(max_length=1)
+    event_description = models.CharField(max_length=200)
     patient = models.ForeignKey(Patient)
-    DOE = models.DateTimeField('Date of Event', default=timezone.now, blank=True)
+    DOE = models.DateField('Date of Event', default=timezone.now, blank=True)
     created_by = models.ForeignKey(User)
 
     def __unicode__(self):

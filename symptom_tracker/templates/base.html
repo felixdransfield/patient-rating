@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 
-    <title>{% block title %}My Base Template{% endblock %}</title>
+    <title>{% block title %}Symptom Tracker beta{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="{% static "assets/css/default.css" %}">
     <script type=”text/javascript” src="{% static "assets/js/jquery-2.1.4.min.js" %}"></script>
@@ -24,7 +24,7 @@
                  {% if user.is_authenticated %}
                  <span class="loggedin">Logged in as: {{ user.get_username }}</span>
                  {% else %}
-                 <span class="sub-title">Not logged in</span>
+                 <span class="loggedin red">Not logged in</span>
                   {% endif %}
                  <a href="/"><i class="fa fa-home fa-2x" title="Home"></i></a>
                  <a href="/accounts/profile/{{ user.id }}"><i class="fa fa-user-md fa-2x" title="Profile"></i></a>

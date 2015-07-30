@@ -1,10 +1,11 @@
 from django.shortcuts import render_to_response, render
 from models import Patient, PANSS, HCR20
-from forms import PatientForm, PANSSForm, HCR20Form
+from forms import PatientForm, PANSSForm, HCR20Form, PANSSNegativeForm, PANSSPositiveForm
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from formtools.wizard.views import SessionWizardView
 from django.template import RequestContext
 from django.contrib.auth.models import User
 # Create your views here.
@@ -81,6 +82,23 @@ def panssForm(request, patient_id):
     args['form'] = f
 
     return render(request, 'panss_form.html', args)
+
+
+#trying to add pagination ############
+
+# class PANSSWizard( SessionWizardView ):
+#     template_name = 'panss_form1.html'
+#
+#     def dispatch(self, request, patient_id, *args, **kwargs):
+#         self.instance_dict = {
+#             '0': Patient.objects.get(id=patient_id)
+#
+#         }
+#         return super(PANSSWizard, self).dispatch(request, *args, **kwargs)
+#
+#     def done( self, form_list, **kwargs ):
+#         self.instance.save()
+#####################################change urls back to panssForm
 
 #creates new HCR20 rating
 @login_required
