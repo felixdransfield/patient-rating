@@ -144,7 +144,7 @@ TEMPLATE_CONTEXT_PROCESSORS = {
     #'django.core.context_processors.auth',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-    'symptom_tracker.user_context.user_context',
+
 }
 
 AUTH_PROFILE_MODULE = 'userprofile.UserProfile'

@@ -6,7 +6,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from forms import PANSSForm, PANSSFormFull
-from django.template import RequestContext
+
 
 #Shows Panss ratings for specific patient - based on context
 @login_required
