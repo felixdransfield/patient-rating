@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<h1>Users</h1>
+
+{% for user in users %}
+<div>
+   <h2> <a class="link" href="profile/{{ user.id }}/">{{ user.first_name }} {{ user.last_name }}</a></h2>
+
+    </div>
+
+{% endfor %}
+
+{% endblock %}

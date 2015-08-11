@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, render
-from models import Patient, PANSS, HCR20
-from forms import PatientForm, PANSSForm, HCR20Form, PANSSNegativeForm, PANSSPositiveForm
+from models import Patient, HCR20
+from panss.models import PANSS
+from forms import PatientForm, HCR20Form
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
@@ -47,59 +48,6 @@ def create(request):
     return render(request, 'create_patient.html', args)
 
 
-#Shows Panss ratings for specific patient - based on context
-@login_required
-def panss(request, patient_id):
-
-    return render(request, 'panss.html',{'panss': PANSS.objects.filter(patient__id=patient_id),
-                                         'patient': Patient.objects.get(id=patient_id),
-                                         })
-
-
-#creates a new Panss rating - using Panss Form
-@login_required
-def panssForm(request, patient_id):
-    a = Patient.objects.get(id=patient_id)
-
-    if request.method == "POST":
-        f = PANSSForm(request.POST)
-        if f.is_valid():
-            c = f.save(commit=False)
-            c.rating_date = timezone.now()
-            c.created_by_id = request.user.id
-
-            c.patient = a
-            c.save()
-            #takes user back to patient profile
-            return HttpResponseRedirect('/patient/get/%s' % patient_id)
-    else:
-        f = PANSSForm()
-
-    args = {}
-    args.update(csrf(request))
-
-    args['patient'] = a
-    args['form'] = f
-
-    return render(request, 'panss_form.html', args)
-
-
-#trying to add pagination ############
-
-# class PANSSWizard( SessionWizardView ):
-#     template_name = 'panss_form1.html'
-#
-#     def dispatch(self, request, patient_id, *args, **kwargs):
-#         self.instance_dict = {
-#             '0': Patient.objects.get(id=patient_id)
-#
-#         }
-#         return super(PANSSWizard, self).dispatch(request, *args, **kwargs)
-#
-#     def done( self, form_list, **kwargs ):
-#         self.instance.save()
-#####################################change urls back to panssForm
-
 #creates new HCR20 rating
 @login_required
 def hcr20Form(request, patient_id):
@@ -115,7 +63,7 @@ def hcr20Form(request, patient_id):
             c.patient = a
             c.save()
 
-            return HttpResponseRedirect('/patient/get/%s' % patient_id)
+            return HttpResponseRedirect('/patient/%s' % patient_id)
     else:
         f = HCR20Form()
 
@@ -136,9 +84,3 @@ def hcr20(request, patient_id):
                                          'patient': Patient.objects.get(id=patient_id)})
 
 
-def panssItem(request, panss_id, patient_id):
-
-    return render(request, 'panssItem.html',{'panssItem': PANSS.objects.filter(patient__id=patient_id, id=panss_id),
-                                         'patient': Patient.objects.get(id=patient_id),
-
-                                         })

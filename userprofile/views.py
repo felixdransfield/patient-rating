@@ -5,10 +5,15 @@ from userprofile.models import UserProfile
 from forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 
+@login_required
+def users(request):
+    return render(request, 'users.html',
+                  {'users': UserProfile.objects.all() })
+
 
 @login_required
 def edit_profile(request, user_id):
-    a = User.objects.get(id=user_id)
+    a = request.user.id=user_id
 
     if request.method == "POST":
         f = UserProfileForm(request.POST)
@@ -18,7 +23,7 @@ def edit_profile(request, user_id):
             c.user_id = a
             c.save()
             #takes user back to patient profile
-            return HttpResponseRedirect('/accounts/profile/%s' % patient_id)
+            return HttpResponseRedirect('/accounts/profile/%s' % user_id)
     else:
         f = UserProfileForm()
 
@@ -33,5 +38,7 @@ def edit_profile(request, user_id):
 @login_required
 def user_profile(request, user_id):
 
+
     return render(request, 'profile.html',{'user_profile': UserProfile.objects.get(id=user_id),
+
                                          })

@@ -19,6 +19,10 @@
     {{ ds|load_charts:"container" }}
 </head>
 <body>
+<h1>PANSS Rating for {{ patient.name }} on {{panss.rating_date}} </h1>
+
+<h2> Rated By: {{panss.created_by}}</h2>
+
     <div id='container'> Chart will be rendered here </div>
 
 

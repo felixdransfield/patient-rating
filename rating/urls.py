@@ -29,22 +29,10 @@ urlpatterns = [
     url(r'^all/$', 'rating.views.patients'),
 
     #Shows individual patient based on patient_id variable
-    url(r'^get/(?P<patient_id>\d+)/$', 'rating.views.patient'),
+    url(r'^(?P<patient_id>\d+)/$', 'rating.views.patient'),
 
     #create patient form
     url(r'^create/$', 'rating.views.create'),
-
-    #create new panss rating
-     url(r'^panss/new/(?P<patient_id>\d+)/$', 'rating.views.panssForm'),
-
-
-    #trying to paginate forms
-   # url(r'^panss/new/(?P<patient_id>\d+)/$', PANSSWizard.as_view([PANSSPositiveForm, PANSSNegativeForm, PANSSGeneralForm])),
-
-    #show previous panss ratings
-    url(r'^panss/(?P<patient_id>\d+)/$', 'rating.views.panss'),
-
-    url(r'^panss/(?P<patient_id>\d+)/(?P<panss_id>\d+)/$', 'rating.views.panssItem'),
 
     #create new HCR20 rating
     url(r'^HCR20/new/(?P<patient_id>\d+)/$', 'rating.views.hcr20Form'),

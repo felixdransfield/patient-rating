@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block sidebar %}
+<ul>
+    <a href="/patient/all"> <li><p>Patients</p></li></a>
+    <a href="/patient/{{ patient.id }}/"><li class="sidebarSub"><p>Patient: {{ patient.name }} </p></li></a>
+    <a href="/patient/panss/{{ patient.id }}"><li class="currentPage sidebarSub2"><p>PANSS</p></li></a>
+    <a href="/patient/HCR20/{{ patient.id }}"><li class="sidebarSub2"><p>HCR20</p></li></a>
+    <a href="/patient/event/{{ patient.id }}"><li class="sidebarSub2"><p>Events</p></li></a>
+
+</ul>
+{% endblock %}
+
+{% block content %}
+
+{% if has_admission %}
+
+    {% if group_id > 1 %}
+        <h1>PANSS Ratings for {{ patient.name }}</h1>
+
+        <h2>PANSS</h2>
+        <div class="btn grey">Admission</div>
+        <a href="/patient/panss/full/{{ patient.id }}" class="btn blue">Amend</a>
+            {% if group_id > 2 %}
+                <a href="/" class="btn blue">Set Ratings Targets</a>
+            {% endif %}
+        <br>
+        <h2>Today's PANSS Rating</h2>
+        <a href="/patient/panss/new/{{ patient.id }}" class="btn blue"><i class="fa fa-plus "></i></a>
+
+        <h3>Charts</h3>
+        <a href="/chart/Panss/Positive/{{ patient.id }}" class="btn blue">Positive</a>
+        <a href="/chart/Panss/Negative/{{ patient.id }}" class="btn blue">Negative</a>
+        <a href="/chart/Panss/General/{{ patient.id }}" class="btn blue">General</a>
+        <a href="/chart/Panss/Additional/{{ patient.id }}" class="btn blue">Additional Symptoms</a><br><br>
+        <table class="mytable">
+            <tr>
+                <th>Date of rating</th>
+                <th>Rater</th>
+            </tr>
+                {% for panss in panss %}
+                <tr>
+                    <td><a href="/patient/panss/{{patient.id}}/{{panss.id}}" class="link">{{panss.rating_date}}</a></td>
+                    <td>{{panss.created_by}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+
+    {% else %}
+        <h2>Today's PANSS Rating</h2>
+        <a href="/patient/panss/new/{{ patient.id }}" class="btn blue"><i class="fa fa-plus "></i></a>
+
+
+    {% endif %}
+
+{% else %}
+
+    <h1>PANSS Ratings for {{ patient.name }}</h1>
+    <p>This Patient has not yet had a PANSS rating. To add their first one click the button below:</p>
+    <a href="/patient/panss/admission/{{ patient.id }}" class="btn blue">Admission PANSS score</a>
+
+{% endif %}
+
+{% endblock %}

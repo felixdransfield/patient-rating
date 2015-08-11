@@ -61,7 +61,7 @@
     }
 
    .rating-form form{
-        max-width: 550px;
+        max-width: 600px;
    }
 
    .mytable{
@@ -89,6 +89,11 @@
         h1{
              color: #55acee;
              text-align: center;
+        }
+
+        h2{
+            color: #55acee;
+            display: inline-block;
         }
 
 /* ---------------- Header -------------------*/
@@ -272,6 +277,11 @@
 
         .blue:hover {
             background-color: #6FC6FF;
+        }
+
+        .grey {
+            background-color: #efefef;
+            box-shadow: 0px 5px 0px 0px #cccccc;
         }
 
 

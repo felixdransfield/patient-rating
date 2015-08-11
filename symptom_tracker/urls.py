@@ -23,8 +23,9 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'symptom_tracker.views.home'),
     url(r'^patient/', include('rating.urls')),
-    url(r'^accounts/', include('userprofile.urls')),
+    url(r'^patient/panss/', include('panss.urls')),
     url(r'^chart/', include('charts.urls')),
+    url(r'^accounts/', include('userprofile.urls')),
     url(r'^patient/', include('events.urls')),
 
 

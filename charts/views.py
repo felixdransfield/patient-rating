@@ -1,8 +1,11 @@
 from django.shortcuts import render, render_to_response
-from rating.models import Patient, PANSS, HCR20
+from rating.models import Patient, HCR20
+from panss.models import PANSS, FullPANSS
 from chartit import DataPool, Chart
 
 # Create your views here.
+
+terms = ['patient_id','P1','P2','P3','P4','P5','P6','P7','N1','N2','N3','N4','N5','N6','N7','G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12','G13','G14','G15','G16','S1','S2','S3','id']
 
 #Chart View for Positive subscale of PANSS
 def Pchart(request, patient_id):
@@ -13,41 +16,7 @@ def Pchart(request, patient_id):
            series=
             [{'options': {
                'source': PANSS.objects.filter(patient__id=patient_id)},
-              'terms': [
-                'P1',
-                'P2',
-                'P3',
-                'P4',
-                'P5',
-                'P6',
-                'P7',
-                'N1',
-                'N2',
-                'N3',
-                'N4',
-                'N5',
-                'N6',
-                'N7',
-                'G1',
-                'G2',
-                'G3',
-                'G4',
-                'G5',
-                'G6',
-                'G7',
-                'G8',
-                'G9',
-                'G10',
-                'G11',
-                'G12',
-                'G13',
-                'G14',
-                'G15',
-                'G16',
-                'S1',
-                'S2',
-                'S3',
-                'id',]},
+              'terms': terms},
 
          ])
 
@@ -95,42 +64,7 @@ def Nchart(request, patient_id):
            series=
             [{'options': {
                'source': PANSS.objects.filter(patient__id=patient_id)},
-              'terms': [
-                'patient_id',
-                'P1',
-                'P2',
-                'P3',
-                'P4',
-                'P5',
-                'P6',
-                'P7',
-                'N1',
-                'N2',
-                'N3',
-                'N4',
-                'N5',
-                'N6',
-                'N7',
-                'G1',
-                'G2',
-                'G3',
-                'G4',
-                'G5',
-                'G6',
-                'G7',
-                'G8',
-                'G9',
-                'G10',
-                'G11',
-                'G12',
-                'G13',
-                'G14',
-                'G15',
-                'G16',
-                'S1',
-                'S2',
-                'S3',
-                'id',]}
+              'terms': terms}
              ])
 
     #Step 2: declares the variables for the chart
@@ -177,42 +111,7 @@ def Gchart(request, patient_id):
            series=
             [{'options': {
                'source': PANSS.objects.filter(patient__id=patient_id)},
-              'terms': [
-                'patient_id',
-                'P1',
-                'P2',
-                'P3',
-                'P4',
-                'P5',
-                'P6',
-                'P7',
-                'N1',
-                'N2',
-                'N3',
-                'N4',
-                'N5',
-                'N6',
-                'N7',
-                'G1',
-                'G2',
-                'G3',
-                'G4',
-                'G5',
-                'G6',
-                'G7',
-                'G8',
-                'G9',
-                'G10',
-                'G11',
-                'G12',
-                'G13',
-                'G14',
-                'G15',
-                'G16',
-                'S1',
-                'S2',
-                'S3',
-                'id',]}
+              'terms': terms}
              ])
 
     #Step 2: declares the variables for the chart
@@ -268,42 +167,7 @@ def Schart(request, patient_id):
            series=
             [{'options': {
                'source': PANSS.objects.filter(patient__id=patient_id)},
-              'terms': [
-                'patient_id',
-                'P1',
-                'P2',
-                'P3',
-                'P4',
-                'P5',
-                'P6',
-                'P7',
-                'N1',
-                'N2',
-                'N3',
-                'N4',
-                'N5',
-                'N6',
-                'N7',
-                'G1',
-                'G2',
-                'G3',
-                'G4',
-                'G5',
-                'G6',
-                'G7',
-                'G8',
-                'G9',
-                'G10',
-                'G11',
-                'G12',
-                'G13',
-                'G14',
-                'G15',
-                'G16',
-                'S1',
-                'S2',
-                'S3',
-                'id',]}
+              'terms': terms}
              ])
 
 
@@ -542,3 +406,89 @@ def Rchart(request, patient_id):
 
     #Step 3: Send the chart object to the template.
     return render(request, 'chart.html', {'ds':cht, 'patient': Patient.objects.get(id=patient_id)})
+
+def PanssItemChart(request, panss_id, patient_id):
+    #Step 1: Create a DataPool with the data we want to retrieve
+    name =  Patient.objects.get(id=patient_id)
+    ds = \
+        DataPool(
+           series=
+            [{'options': {
+               'source': PANSS.objects.filter(patient__id=patient_id, id=panss_id)},
+              'terms': [
+                'P1',
+                'P2',
+                'P3',
+                'P4',
+                'P5',
+                'P6',
+                'P7',
+                'N1',
+                'N2',
+                'N3',
+                'N4',
+                'N5',
+                'N6',
+                'N7',
+                'G1',
+                'G2',
+                'G3',
+                'G4',
+                'G5',
+                'G6',
+                'G7',
+                'G8',
+                'G9',
+                'G10',
+                'G11',
+                'G12',
+                'G13',
+                'G14',
+                'G15',
+                'G16',
+                'S1',
+                'S2',
+                'S3',
+                'id',]},
+
+         ])
+
+    #Step 2: declares the variables for the chart
+    cht = Chart(
+            datasource = ds,
+            series_options =
+              [{'options':{
+                  'type': 'column',
+                  'stacking': False},
+                'terms':{
+                  'id': [
+                    'P1',
+                    'P2',
+                    'P3',
+                    'P4',
+                    'P5',
+                    'P6',
+                    'P7',
+                        ]
+                  }}],
+            chart_options =
+              {'title': {
+                   'text': 'Positive Symptom scores for %s' % name},
+               'xAxis': {
+                    'title': {
+                       'text': 'Rating'}},
+                'yAxis' : {
+                  'title':{
+                      'text': 'Score'
+                  }
+              }
+              })
+
+
+    #Step 3: Send the chart object to the template.
+    return render(request, 'panssItem.html', {'ds':cht, 'panssItem': PANSS.objects.filter(patient__id=patient_id, id=panss_id),
+                                         'patient': Patient.objects.get(id=patient_id),
+
+                                         })
+
+

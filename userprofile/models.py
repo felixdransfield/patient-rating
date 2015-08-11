@@ -9,5 +9,8 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 
+    def __unicode__(self):
+        return '%s' % (self.user)
+
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
 

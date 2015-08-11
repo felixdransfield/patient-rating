@@ -3,7 +3,7 @@
 
 <ul>
     <a href="/patient/all"> <li><p>Patients</p></li></a>
-    <a href="/patient/get/{{ patient.id }}/"><li class="sidebarSub"><p>Patient: {{ patient.name }} </p></li></a>
+    <a href="/patient/{{ patient.id }}/"><li class="sidebarSub"><p>Patient: {{ patient.name }} </p></li></a>
     <a href="/patient/panss/{{ patient.id }}"><li class="sidebarSub2"><p>PANSS</p></li></a>
     <a href="/patient/HCR20/{{ patient.id }}"><li  class="currentPage sidebarSub2"><p>HCR20</p></li></a>
     <a href="/patient/event/{{ patient.id }}"><li class="sidebarSub2"><p>Events</p></li></a>

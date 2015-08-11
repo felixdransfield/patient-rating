@@ -6,6 +6,8 @@ from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 from forms import MyRegistrationForm
+from django.contrib.auth.models import User, Group
+from django.db.models.signals import post_save
 
 
 def home(request):
@@ -56,3 +58,10 @@ def register_user(request):
 
 def register_success(request):
     return render(request, 'register_success.html')
+
+
+# signal to add new user to default group
+def default_group(sender, instance, created, **kwargs):
+    if created:
+        instance.groups.add(Group.objects.get(name='4'))
+post_save.connect(default_group, sender=User)

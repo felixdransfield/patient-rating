@@ -1,4 +1,4 @@
-__author__ = 'felixdransfield'
+
 from django import forms
 from models import UserProfile
 

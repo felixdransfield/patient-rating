@@ -2,8 +2,22 @@ __author__ = 'felixdransfield'
 
 from django import forms
 from django.forms.models import ModelForm, ModelFormMetaclass
-from models import Patient, Update, PANSS, HCR20
+from models import Patient, Update, HCR20
+from panss.models import PANSS
 from django.utils.safestring import mark_safe
+
+rating_choices = (
+        (1, 'Better'),
+        (0, 'Same'),
+        (-1, 'Worse'),
+
+    )
+
+#Renders the Radioselect buttons horizontally (for speed in filling in  forms)
+class HorizontalRadioRenderer(forms.RadioSelect.renderer):
+
+    def render(self):
+        return mark_safe(u'\n'.join([u'%s\n' % w for w in self]))
 
 #THe Patient form for creating a new patient - with the basic info
 class PatientForm(forms.ModelForm):
@@ -19,123 +33,6 @@ class PatientForm(forms.ModelForm):
         }
 
 
-
-
-#rating choices are used for Panns and HCR20 - they are used to give subjective ratings for each field in the forms.
-#they are used in ChoiceField(choice...)
-rating_choices = (
-        (1, 'Better'),
-        (0, 'Same'),
-        (-1, 'Worse'),
-
-    )
-
-#Renders the Radioselect buttons horizontally (for speed in filling in  forms)
-class HorizontalRadioRenderer(forms.RadioSelect.renderer):
-
-    def render(self):
-        return mark_safe(u'\n'.join([u'%s\n' % w for w in self]))
-
-
-#The PANSS form for adding a PANSS update to a patient, Gives each question a radioselect button with rating_choices arguments
-class PANSSForm(forms.ModelForm):
-
-
-    class Meta:
-        model = PANSS
-        fields = ('P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'G1', 'G2', 'G3', 'G4',
-                    'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12', 'G13', 'G14', 'G15', 'G16', 'S1', 'S2', 'S3')
-        widgets = {
-            'P1': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
-            'P2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N1': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G1': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G8': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G9': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G10': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G11': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G12': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G13': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G14': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G15': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G16': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'S1': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'S2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'S3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-
-        }
-
-#trying to paginate forms
-class PANSSPositiveForm(forms.ModelForm):
-    class Meta:
-        model = PANSS
-        fields = ('P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7')
-        widgets = {
-            'P1': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
-            'P2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'P7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer)
-
-        }
-
-class PANSSNegativeForm(forms.ModelForm):
-    class Meta:
-        model = PANSS
-        fields = ('N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7')
-        widgets = {
-            'N1': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
-            'N2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'N7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer)
-
-        }
-
-class PANSSGeneralForm(forms.ModelForm):
-    class Meta:
-        model = PANSS
-        fields = ('G1', 'G2', 'G3', 'G4','G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12', 'G13', 'G14', 'G15', 'G16')
-        widgets = {
-            'G1': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G2': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G3': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G4': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G5': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G6': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G7': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G8': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G9': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G10': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G11': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G12': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G13': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G14': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G15': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-            'G16': forms.RadioSelect(choices=rating_choices,  renderer=HorizontalRadioRenderer),
-
-        }
 
 
 
