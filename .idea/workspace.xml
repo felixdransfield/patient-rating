@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c0c42a-2fc0-42c4-a8bd-21bd091b1675" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panss/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/panss/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/symptom_tracker/user_context.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/userprofile/templates/users.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rating/templates/panss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rating/templates/panssItem.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rating/templates/panss_form.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rating/templates/panss_form1.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/templates/HCR20.html" afterPath="$PROJECT_DIR$/rating/templates/HCR20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/admin.py" afterPath="$PROJECT_DIR$/rating/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symptom_tracker/templates/base.html" afterPath="$PROJECT_DIR$/symptom_tracker/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charts/templates/chart.html" afterPath="$PROJECT_DIR$/charts/templates/chart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/default.css" afterPath="$PROJECT_DIR$/static/css/default.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/edit-profile.html" afterPath="$PROJECT_DIR$/userprofile/templates/edit-profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/events/templates/event.html" afterPath="$PROJECT_DIR$/events/templates/event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/forms.py" afterPath="$PROJECT_DIR$/rating/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/forms.py" afterPath="$PROJECT_DIR$/userprofile/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/models.py" afterPath="$PROJECT_DIR$/rating/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/models.py" afterPath="$PROJECT_DIR$/userprofile/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/templates/patient.html" afterPath="$PROJECT_DIR$/rating/templates/patient.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/templates/patients.html" afterPath="$PROJECT_DIR$/rating/templates/patients.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/templates/profile.html" afterPath="$PROJECT_DIR$/userprofile/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symptom_tracker/settings.py" afterPath="$PROJECT_DIR$/symptom_tracker/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/urls.py" afterPath="$PROJECT_DIR$/rating/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symptom_tracker/urls.py" afterPath="$PROJECT_DIR$/symptom_tracker/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/urls.py" afterPath="$PROJECT_DIR$/userprofile/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charts/views.py" afterPath="$PROJECT_DIR$/charts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rating/views.py" afterPath="$PROJECT_DIR$/rating/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symptom_tracker/views.py" afterPath="$PROJECT_DIR$/symptom_tracker/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/userprofile/views.py" afterPath="$PROJECT_DIR$/userprofile/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/symptom_tracker/user_context.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/panss/views.py" afterPath="$PROJECT_DIR$/panss/views.py" />
     </list>
     <ignored path="symptom_tracker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/panss/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07903056" vertical-offset="0" max-vertical-offset="949">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
               <folding />
             </state>
@@ -77,10 +48,22 @@
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/symptom_tracker/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+              <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+              <folding>
+                <element signature="e#32#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/panss/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="2145">
-              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.28872496" vertical-offset="56" max-vertical-offset="2145">
+              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -91,7 +74,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/charts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="1815">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1815">
               <caret line="494" column="0" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
@@ -173,9 +156,9 @@
         <option value="$PROJECT_DIR$/symptom_tracker/local_settings.py" />
         <option value="$PROJECT_DIR$/userprofile/templates/edit-profile.html" />
         <option value="$PROJECT_DIR$/charts/views.py" />
-        <option value="$PROJECT_DIR$/panss/views.py" />
         <option value="$PROJECT_DIR$/panss/templates/panss.html" />
         <option value="$PROJECT_DIR$/panss/urls.py" />
+        <option value="$PROJECT_DIR$/panss/views.py" />
       </list>
     </option>
   </component>
@@ -243,6 +226,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="symptom_tracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symptom_tracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symptom_tracker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="panss" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,20 +259,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symptom_tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symptom_tracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="charts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,14 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symptom_tracker/user_context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.031612225" vertical-offset="0" max-vertical-offset="949">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panss/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1500">
@@ -818,16 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symptom_tracker/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8893572" vertical-offset="131" max-vertical-offset="1080">
-          <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
-          <folding>
-            <element signature="e#32#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userprofile/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17386723" vertical-offset="0" max-vertical-offset="949">
@@ -874,12 +839,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panss/views.py">
+    <entry file="file://$PROJECT_DIR$/panss/templates/panss.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="56" max-vertical-offset="2145">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="1020">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panss/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symptom_tracker/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#32#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -901,19 +882,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panss/templates/panss.html">
+    <entry file="file://$PROJECT_DIR$/panss/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/panss/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07903056" vertical-offset="0" max-vertical-offset="949">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="0.28872496" vertical-offset="56" max-vertical-offset="2145">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

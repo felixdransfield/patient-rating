@@ -20,7 +20,7 @@ def panss(request, patient_id):
                                          'patient': Patient.objects.get(id=patient_id),
                                          'has_admission': True,
                                          'group_id': group_id,
-                                         },context_instance=RequestContext(request))
+                                         })
 
     else:
         return render(request, 'panss.html',{'panss': PANSS.objects.filter(patient__id=patient_id),
