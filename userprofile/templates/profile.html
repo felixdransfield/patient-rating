@@ -8,7 +8,8 @@
 
 
 
-
+{% if own_profile = True %}
 <a href="/accounts/profile/edit/{{ user.id }}" class="btn blue">Edit</a>
+{% endif %}
 
 {% endblock %}

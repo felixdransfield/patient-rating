@@ -13,19 +13,16 @@ def users(request):
 
 @login_required
 def edit_profile(request, user_id):
-    a = request.user.id=user_id
-
     if request.method == "POST":
-        f = UserProfileForm(request.POST)
+        f = UserProfileForm(request.POST, instance=request.user.profile)
         if f.is_valid():
-            c = f.save(commit=False)
+            f.save()
 
-            c.user_id = a
-            c.save()
-            #takes user back to patient profile
             return HttpResponseRedirect('/accounts/profile/%s' % user_id)
     else:
-        f = UserProfileForm()
+        user = request.user
+        profile = user.profile
+        f = UserProfileForm(instance=profile)
 
     args = {}
     args.update(csrf(request))
@@ -37,8 +34,14 @@ def edit_profile(request, user_id):
 
 @login_required
 def user_profile(request, user_id):
+    a = UserProfile.objects.filter(user__id=user_id)
 
 
-    return render(request, 'profile.html',{'user_profile': UserProfile.objects.get(id=user_id),
+    if a.exists():
+        return render(request, 'profile.html',{'user_profile': UserProfile.objects.get(user__id=user_id),
+
+
 
                                          })
+    else:
+        return HttpResponseRedirect('/accounts/profile/edit/%s' % user_id)
