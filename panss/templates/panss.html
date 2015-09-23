@@ -21,13 +21,14 @@
         <div class="btn grey">Admission</div>
         <a href="/patient/panss/full/{{ patient.id }}" class="btn blue">Amend</a>
             {% if group_id > 2 %}
-                <a href="/" class="btn blue">Set Ratings Targets</a>
+                <a href="/patient/panss/rating-targets/{{ patient.id }}/{{ fullpanss.id }}" class="btn blue">Set Ratings Targets</a>
             {% endif %}
         <br>
         <h2>Today's PANSS Rating</h2>
         <a href="/patient/panss/new/{{ patient.id }}" class="btn blue"><i class="fa fa-plus "></i></a>
 
         <h3>Charts</h3>
+
         <a href="/chart/Panss/Positive/{{ patient.id }}" class="btn blue">Positive</a>
         <a href="/chart/Panss/Negative/{{ patient.id }}" class="btn blue">Negative</a>
         <a href="/chart/Panss/General/{{ patient.id }}" class="btn blue">General</a>

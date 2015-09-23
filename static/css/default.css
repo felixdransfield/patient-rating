@@ -25,13 +25,14 @@
 
     }
 
-    form{
+    .rating-form form{
         list-style-type: none;
         max-width: 400px;
         margin: 10px auto;
         padding: 10px 20px;
         background: #f4f7f8;
         border-radius: 8px;
+        max-width: 600px;
     }
 
     input[type="text"],
@@ -60,9 +61,7 @@
         margin-bottom: 30px;
     }
 
-   .rating-form form{
-        max-width: 600px;
-   }
+
 
    .mytable{
         margin: 0 auto;
@@ -230,6 +229,7 @@
         }
 
 
+
 /* ---------------- Links/Buttons -------------------*/
         .link {
             text-decoration: none;
@@ -285,3 +285,13 @@
         }
 
 
+/* ---------------- Rating Targets -------------------*/
+
+.rating-target{
+    display: inline-block
+}
+
+.rating-target-container #chart-container{
+    display: inline-block;
+    width: 550px;
+}

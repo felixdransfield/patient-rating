@@ -1,6 +1,5 @@
 from django.shortcuts import render_to_response, render
 from models import Patient, HCR20
-from panss.models import PANSS
 from forms import PatientForm, HCR20Form
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf

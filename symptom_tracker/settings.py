@@ -132,6 +132,8 @@ INSTALLED_APPS = (
     'userprofile',
     'charts',
     'chartit',
+    'ggplot',
+
 
 
 

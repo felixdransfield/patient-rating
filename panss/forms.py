@@ -1,5 +1,5 @@
 from django import forms
-from models import PANSS, FullPANSS
+from models import PANSS, FullPANSS, PANSSFilter
 from rating.models import Patient
 from django.utils.safestring import mark_safe
 
@@ -173,5 +173,49 @@ class PANSSGeneralForm(forms.ModelForm):
             'G14': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
             'G15': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
             'G16': forms.RadioSelect(choices=rating_choices, renderer=HorizontalRadioRenderer),
+
+        }
+
+class PANSSFilterForm(forms.ModelForm):
+    class Meta:
+        model = PANSSFilter
+        fields = (
+            'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'G1', 'G2', 'G3', 'G4',
+            'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12', 'G13', 'G14', 'G15', 'G16', 'S1', 'S2', 'S3')
+
+        widgets = {
+            'P1': forms.CheckboxInput(),
+            'P2': forms.CheckboxInput(),
+            'P3': forms.CheckboxInput(),
+            'P4': forms.CheckboxInput(),
+            'P5': forms.CheckboxInput(),
+            'P6': forms.CheckboxInput(),
+            'P7': forms.CheckboxInput(),
+            'N1': forms.CheckboxInput(),
+            'N2': forms.CheckboxInput(),
+            'N3': forms.CheckboxInput(),
+            'N4': forms.CheckboxInput(),
+            'N5': forms.CheckboxInput(),
+            'N6': forms.CheckboxInput(),
+            'N7': forms.CheckboxInput(),
+            'G1': forms.CheckboxInput(),
+            'G2': forms.CheckboxInput(),
+            'G3': forms.CheckboxInput(),
+            'G4': forms.CheckboxInput(),
+            'G5': forms.CheckboxInput(),
+            'G6': forms.CheckboxInput(),
+            'G7': forms.CheckboxInput(),
+            'G8': forms.CheckboxInput(),
+            'G9': forms.CheckboxInput(),
+            'G10': forms.CheckboxInput(),
+            'G11': forms.CheckboxInput(),
+            'G12': forms.CheckboxInput(),
+            'G13': forms.CheckboxInput(),
+            'G14': forms.CheckboxInput(),
+            'G15': forms.CheckboxInput(),
+            'G16': forms.CheckboxInput(),
+            'S1': forms.CheckboxInput(),
+            'S2': forms.CheckboxInput(),
+            'S3': forms.CheckboxInput(),
 
         }

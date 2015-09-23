@@ -3,6 +3,9 @@ from rating.models import Patient, HCR20
 from panss.models import PANSS, FullPANSS
 from chartit import DataPool, Chart
 
+
+
+
 # Create your views here.
 
 terms = ['patient_id','P1','P2','P3','P4','P5','P6','P7','N1','N2','N3','N4','N5','N6','N7','G1','G2','G3','G4','G5','G6','G7','G8','G9','G10','G11','G12','G13','G14','G15','G16','S1','S2','S3','id']
@@ -492,3 +495,115 @@ def PanssItemChart(request, panss_id, patient_id):
                                          })
 
 
+def TargetsChart(cht, fullpanss_id, patient_id):
+    #Step 1: Create a DataPool with the data we want to retrieve
+
+    ds = \
+        DataPool(
+           series=
+            [{'options': {
+               'source': FullPANSS.objects.filter(patient__id=patient_id, id=fullpanss_id, is_current=True)},
+              'terms': [
+                'P1',
+                'P2',
+                'P3',
+                'P4',
+                'P5',
+                'P6',
+                'P7',
+                'N1',
+                'N2',
+                'N3',
+                'N4',
+                'N5',
+                'N6',
+                'N7',
+                'G1',
+                'G2',
+                'G3',
+                'G4',
+                'G5',
+                'G6',
+                'G7',
+                'G8',
+                'G9',
+                'G10',
+                'G11',
+                'G12',
+                'G13',
+                'G14',
+                'G15',
+                'G16',
+                'S1',
+                'S2',
+                'S3',
+                'id',]},
+
+         ])
+
+    #Step 2: declares the variables for the chart
+    cht = Chart(
+            datasource = ds,
+            series_options =
+              [{'options':{
+                  'type': 'column',
+                  'stacking': False},
+                'terms':{
+                  'id': [
+                    'P1',
+                    'P2',
+                    'P3',
+                    'P4',
+                    'P5',
+                    'P6',
+                    'P7',
+                    'P1',
+                    'P2',
+                    'P3',
+                    'P4',
+                    'P5',
+                    'P6',
+                    'P7',
+                    'N1',
+                    'N2',
+                    'N3',
+                    'N4',
+                    'N5',
+                    'N6',
+                    'N7',
+                    'G1',
+                    'G2',
+                    'G3',
+                    'G4',
+                    'G5',
+                    'G6',
+                    'G7',
+                    'G8',
+                    'G9',
+                    'G10',
+                    'G11',
+                    'G12',
+                    'G13',
+                    'G14',
+                    'G15',
+                    'G16',
+                    'S1',
+                    'S2',
+                    'S3',
+                        ]
+                  }}],
+            chart_options =
+              {'title': {
+                   'text': 'Set Rating Targets' },
+               'xAxis': {
+                    'title': {
+                       'text': 'Rating'}},
+                'yAxis' : {
+                  'title':{
+                      'text': 'Score'
+                  }
+              }
+              })
+
+    #Step 3: Send the chart object to the template.
+    return cht

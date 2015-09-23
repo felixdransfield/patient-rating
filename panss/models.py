@@ -47,13 +47,52 @@ class FullPANSS(models.Model):
 
 
 
-    #returns name of patient and date for admin purposes
+    # returns name of patient and date for admin purposes
     def __unicode__(self):
         return '%s %s' % (self.patient, self.rating_date)
 
 
+class PANSSFilter(models.Model):
+    P1 = models.BooleanField('Delusions')
+    P2 = models.BooleanField('Conceptual Disorganisation')
+    P3 = models.BooleanField('Hallucinatory Behaviour')
+    P4 = models.BooleanField('Excitement')
+    P5 = models.BooleanField('Grandiosity')
+    P6 = models.BooleanField('Suspiciousness/Persecution')
+    P7 = models.BooleanField('Hostility')
+    N1 = models.BooleanField('Blunted Affect')
+    N2 = models.BooleanField('Emotional Withdrawal')
+    N3 = models.BooleanField('Poor Rapport')
+    N4 = models.BooleanField('Passive/Apathetic Social Withdrawal')
+    N5 = models.BooleanField('Difficulty in Abstract Thinking')
+    N6 = models.BooleanField('Lack of Spontaneity')
+    N7 = models.BooleanField('Stereotyped Thinking')
+    G1 = models.BooleanField('Somatic Concerns')
+    G2 = models.BooleanField('Anxiety')
+    G3 = models.BooleanField('Guilt Feelings')
+    G4 = models.BooleanField('Tension')
+    G5 = models.BooleanField('Mannerisms and Posturing')
+    G6 = models.BooleanField('Depression')
+    G7 = models.BooleanField('Motor Retardation')
+    G8 = models.BooleanField('Uncooperativeness')
+    G9 = models.BooleanField('Unusual Though Content')
+    G10 = models.BooleanField('Disorientation')
+    G11 = models.BooleanField('Poor Attention')
+    G12 = models.BooleanField('Lack of Judgement and Insight')
+    G13 = models.BooleanField('Disturbance of Volition')
+    G14 = models.BooleanField('Poor Impulse Control')
+    G15 = models.BooleanField('Preoccupation')
+    G16 = models.BooleanField('Active Social Avoidance')
+    S1 = models.BooleanField('Anger')
+    S2 = models.BooleanField('Difficulty in Delaying Gratification')
+    S3 = models.BooleanField('Affective Lability')
+    patient = models.ForeignKey(Patient)
+    is_current = models.BooleanField()
 
-#Model for PANSS Instance
+
+
+
+# Model for PANSS Instance
 class PANSS(models.Model):
     rating_date = models.DateField('date of rating', default=timezone.now, blank=True)
     P1 = models.IntegerField('P1 - Delusions', default=0)
@@ -92,6 +131,11 @@ class PANSS(models.Model):
     patient = models.ForeignKey(Patient)
     created_by = models.ForeignKey(User)
 
+
+
+
+
     #returns name of patient and date for admin purposes
     def __unicode__(self):
         return '%s %s' % (self.patient, self.rating_date)
+
