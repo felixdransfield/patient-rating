@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+    <a href="/patient/panss/{{patient.id}}"><li><p>Cancel</p></li></a>
+</ul>
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script type=”text/javascript” src="{% static "assets/js/jquery-2.1.4.min.js" %}"></script>
+    <script type=”text/javascript” src="{% static "assets/js/Highcharts-4.1.7/js/highcharts.js" %}"></script>
+    {% load chartit %}
+    {{ ds|load_charts:"chart-container" }}
+</head>
+<div class="rating-target-container">
+<div class="rating-target">
+
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <table>
+        <tr>
+            <td>{{ field }}</td>
+            <td>{{ field.label }}</td>
+        </tr>
+            </table>
+        {% endfor %}
+        <ul class="submit-row">
+            <li class="submit-button-container"><input type="submit" class="default" name="_save" /></li>
+        </ul><br clear="all" />
+        </form>
+</div>
+
+
+<div id='chart-container'> Chart will be rendered here </div>
+
+</div>
+
+{% endblock %}
